@@ -1,35 +1,56 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{CB01FE52-DBB3-11D2-BD7B-00E07D00F49B}#2.0#0"; "arstabb.ocx"
 Begin VB.Form frmMain 
-   Caption         =   "VB Code bank"
-   ClientHeight    =   6600
-   ClientLeft      =   1530
-   ClientTop       =   1755
-   ClientWidth     =   9480
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
+   Caption         =   "snippets"
+   ClientHeight    =   7185
+   ClientLeft      =   1455
+   ClientTop       =   1380
+   ClientWidth     =   9915
+   DrawMode        =   1  'Blackness
+   FillStyle       =   2  'Horizontal Line
+   FontTransparent =   0   'False
    HelpContextID   =   20
    Icon            =   "Main.frx":0000
    LinkTopic       =   "Form1"
-   MaxButton       =   0   'False
+   Moveable        =   0   'False
+   NegotiateMenus  =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   6600
-   ScaleWidth      =   9480
+   ScaleHeight     =   7185
+   ScaleWidth      =   9915
+   ShowInTaskbar   =   0   'False
+   WhatsThisButton =   -1  'True
+   WhatsThisHelp   =   -1  'True
+   Begin ArsTabB.ArsTabII ArsTabII1 
+      Height          =   315
+      Left            =   0
+      TabIndex        =   14
+      Top             =   0
+      Width           =   9885
+      _ExtentX        =   17436
+      _ExtentY        =   556
+      Caption         =   $"Main.frx":0442
+   End
    Begin MSComctlLib.Toolbar Toolbar1 
-      Align           =   1  'Align Top
-      Height          =   420
+      Align           =   2  'Align Bottom
+      Height          =   360
       Left            =   0
       TabIndex        =   13
-      Top             =   0
-      Width           =   9480
-      _ExtentX        =   16722
-      _ExtentY        =   741
+      Top             =   6825
+      Width           =   9915
+      _ExtentX        =   17489
+      _ExtentY        =   635
       ButtonWidth     =   609
       ButtonHeight    =   582
       Appearance      =   1
+      Style           =   1
       ImageList       =   "ilsMain"
       _Version        =   393216
       BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
-         NumButtons      =   17
+         NumButtons      =   15
          BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Exit"
             Description     =   "Exit"
@@ -40,69 +61,57 @@ Begin VB.Form frmMain
             Style           =   3
          EndProperty
          BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Key             =   "Repair"
-            Description     =   "Repair"
-            Object.ToolTipText     =   "Repair database"
-            ImageIndex      =   11
-         EndProperty
-         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
-         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Delete"
             Description     =   "Delete"
             Object.ToolTipText     =   "Delete routine"
             ImageIndex      =   7
          EndProperty
-         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
-         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "New"
             Description     =   "New"
             Object.ToolTipText     =   "New routine"
             ImageIndex      =   6
          EndProperty
-         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
-         BeginProperty Button9 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Edit"
             Description     =   "Edit"
             Object.ToolTipText     =   "Edit routine"
             ImageIndex      =   13
          EndProperty
-         BeginProperty Button10 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button9 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
-         BeginProperty Button11 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button10 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Copy"
             Description     =   "Copy"
             Object.ToolTipText     =   "Copy to clipboard"
             ImageIndex      =   8
          EndProperty
+         BeginProperty Button11 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
          BeginProperty Button12 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
          BeginProperty Button13 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Key             =   "Help"
-            Description     =   "Help"
-            Object.ToolTipText     =   "Help"
-            ImageIndex      =   12
-         EndProperty
-         BeginProperty Button14 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   3
-         EndProperty
-         BeginProperty Button15 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Save"
             Description     =   "Save"
             Object.ToolTipText     =   "Save"
             ImageKey        =   "save"
          EndProperty
-         BeginProperty Button16 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button14 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
-         BeginProperty Button17 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+         BeginProperty Button15 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Stop"
             Description     =   "Stop"
             Object.ToolTipText     =   "Abort edit or new"
@@ -124,72 +133,72 @@ Begin VB.Form frmMain
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   15
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0442
+            Picture         =   "Main.frx":050C
             Key             =   "closed"
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":055E
+            Picture         =   "Main.frx":0628
             Key             =   "open"
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":067A
+            Picture         =   "Main.frx":0744
             Key             =   "code"
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0796
+            Picture         =   "Main.frx":0860
             Key             =   "codered"
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":08B2
+            Picture         =   "Main.frx":097C
             Key             =   "note"
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":09CE
+            Picture         =   "Main.frx":0A98
             Key             =   "vb"
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0AEA
+            Picture         =   "Main.frx":0BB4
             Key             =   "delete"
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0C02
+            Picture         =   "Main.frx":0CCC
             Key             =   "copy"
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0D1A
+            Picture         =   "Main.frx":0DE4
             Key             =   "exit"
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0E32
+            Picture         =   "Main.frx":0EFC
             Key             =   "redo"
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0F4A
+            Picture         =   "Main.frx":1014
             Key             =   "repair"
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1062
+            Picture         =   "Main.frx":112C
             Key             =   "help"
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":117A
+            Picture         =   "Main.frx":1244
             Key             =   "edit"
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1292
+            Picture         =   "Main.frx":135C
             Key             =   "save"
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":13AA
+            Picture         =   "Main.frx":1474
             Key             =   "abort"
          EndProperty
       EndProperty
    End
    Begin MSComctlLib.TabStrip tabCode 
       Height          =   5775
-      Left            =   3240
+      Left            =   3480
       TabIndex        =   11
-      Top             =   720
+      Top             =   480
       Width           =   6195
       _ExtentX        =   10927
       _ExtentY        =   10186
@@ -200,13 +209,13 @@ Begin VB.Form frmMain
       BeginProperty Tabs {1EFB6598-857C-11D1-B16A-00C0F0283628} 
          NumTabs         =   2
          BeginProperty Tab1 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
-            Caption         =   "Description"
+            Caption         =   "Descripcion"
             Object.ToolTipText     =   "Functional description"
             ImageVarType    =   2
             ImageIndex      =   5
          EndProperty
          BeginProperty Tab2 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
-            Caption         =   "Code snippet"
+            Caption         =   "Codigo"
             Object.ToolTipText     =   "VB source code"
             ImageVarType    =   2
             ImageIndex      =   6
@@ -223,16 +232,16 @@ Begin VB.Form frmMain
    End
    Begin VB.TextBox txtCodeWindow 
       Appearance      =   0  'Flat
-      BackColor       =   &H00C0C0C0&
+      BackColor       =   &H00FFFFFF&
       BorderStyle     =   0  'None
       Height          =   5295
       Index           =   0
-      Left            =   3480
+      Left            =   3240
       Locked          =   -1  'True
       MultiLine       =   -1  'True
       TabIndex        =   5
-      Top             =   1080
-      Width           =   5895
+      Top             =   840
+      Width           =   6255
    End
    Begin VB.TextBox txtCodeWindow 
       BeginProperty Font 
@@ -246,21 +255,21 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   5295
       Index           =   1
-      Left            =   3480
+      Left            =   3360
       Locked          =   -1  'True
       MultiLine       =   -1  'True
       ScrollBars      =   3  'Both
       TabIndex        =   4
-      Top             =   1080
+      Top             =   840
       Width           =   5895
    End
    Begin VB.TextBox txtCodeWindow 
       Height          =   5295
       Index           =   2
-      Left            =   3480
+      Left            =   3360
       MultiLine       =   -1  'True
       TabIndex        =   2
-      Top             =   1080
+      Top             =   840
       Width           =   5895
    End
    Begin VB.TextBox txtCodeWindow 
@@ -279,7 +288,7 @@ Begin VB.Form frmMain
       MultiLine       =   -1  'True
       ScrollBars      =   3  'Both
       TabIndex        =   3
-      Top             =   1080
+      Top             =   840
       Width           =   5895
    End
    Begin VB.PictureBox Picture1 
@@ -295,7 +304,7 @@ Begin VB.Form frmMain
          Height          =   5835
          Left            =   0
          TabIndex        =   12
-         Top             =   120
+         Top             =   0
          Width           =   3135
          _ExtentX        =   5530
          _ExtentY        =   10292
@@ -374,47 +383,6 @@ Begin VB.Form frmMain
       X2              =   9480
       Y1              =   0
       Y2              =   0
-   End
-   Begin VB.Menu mnuFile 
-      Caption         =   "&File"
-      Begin VB.Menu mnuRepairdb 
-         Caption         =   "&Repair database"
-      End
-      Begin VB.Menu mnuFileExit 
-         Caption         =   "E&xit"
-      End
-   End
-   Begin VB.Menu mnuEdit 
-      Caption         =   "&Edit"
-      Begin VB.Menu mnuEditRoutine 
-         Caption         =   "&Edit selected routine"
-      End
-      Begin VB.Menu mnuDeleteRoutine 
-         Caption         =   "&Delete selected routine"
-      End
-      Begin VB.Menu mnuCopy 
-         Caption         =   "&Copy to clipboard"
-         Shortcut        =   ^C
-      End
-   End
-   Begin VB.Menu mnuInsert 
-      Caption         =   "&Insert"
-      Begin VB.Menu mnuNewRoutine 
-         Caption         =   "&New routine"
-      End
-      Begin VB.Menu mnuNewCategory 
-         Caption         =   "&New category"
-      End
-   End
-   Begin VB.Menu mnuHelp 
-      Caption         =   "&Help"
-      Begin VB.Menu mnuHelpContents 
-         Caption         =   "&Contents"
-         Shortcut        =   {F1}
-      End
-      Begin VB.Menu mnuHelpAbout 
-         Caption         =   "&About.."
-      End
    End
 End
 Attribute VB_Name = "frmMain"
@@ -656,17 +624,7 @@ NodeError:
   
 End Sub
 
-Public Sub Repairdb()
-'Close CodeBank Tables
-   Call CloseTables
-   
-'Unload current form
-   Unload frmMain
-   
-'Show repair form
-   frmRepair.Show
 
-End Sub
 
 Public Sub Abort()
 'Show routine list box
@@ -709,8 +667,7 @@ Public Sub Abort()
   Toolbar1.Buttons("Delete").Enabled = True
   Toolbar1.Buttons("Edit").Enabled = True
   Toolbar1.Buttons("Copy").Enabled = True
-  Toolbar1.Buttons("Repair").Enabled = True
-
+  
 'SetFocus to treeview
   tvwMain.SetFocus
   
@@ -894,11 +851,6 @@ Private Sub mnuFile_Click()
 ' Before the menu is dropped down this routine checks if in
 ' Edit mode
 
-  If fvDisplayOnly = False Then
-      mnuRepairdb.Enabled = False
-  Else
-      mnuRepairdb.Enabled = True
-  End If
 
 End Sub
 
@@ -965,7 +917,6 @@ End Sub
 
 Private Sub mnuHelpAbout_Click()
 'Load the About box
-  frmAbout.Show 1
 
 End Sub
 
@@ -975,7 +926,7 @@ Private Sub mnuNewRoutine_Click()
 End Sub
 
 Private Sub mnuRepairdb_Click()
-   Call Repairdb
+   
 
 End Sub
 
@@ -997,7 +948,7 @@ Private Sub Toolbar1_ButtonClick(ByVal Button As Button)
        If MsgBox("Do you really want to exit Code Bank?", vbQuestion + vbYesNo + vbDefaultButton2, "Exiting Code Bank") = vbNo Then Exit Sub
        Call ExitProgram
     Case Is = "Repair"
-       Call Repairdb
+       
     Case Is = "Delete"
        Call DeleteRoutine
     Case Is = "Edit"
