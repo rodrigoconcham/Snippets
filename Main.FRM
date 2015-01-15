@@ -1,14 +1,12 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
-Object = "{CB01FE52-DBB3-11D2-BD7B-00E07D00F49B}#2.0#0"; "arstabb.ocx"
 Begin VB.Form frmMain 
-   BackColor       =   &H00FFFFFF&
-   BorderStyle     =   0  'None
+   BackColor       =   &H80000004&
    Caption         =   "snippets"
    ClientHeight    =   7185
-   ClientLeft      =   1455
-   ClientTop       =   1380
+   ClientLeft      =   1575
+   ClientTop       =   1830
    ClientWidth     =   9915
    DrawMode        =   1  'Blackness
    FillStyle       =   2  'Horizontal Line
@@ -21,19 +19,8 @@ Begin VB.Form frmMain
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   7185
    ScaleWidth      =   9915
-   ShowInTaskbar   =   0   'False
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
-   Begin ArsTabB.ArsTabII ArsTabII1 
-      Height          =   315
-      Left            =   0
-      TabIndex        =   14
-      Top             =   0
-      Width           =   9885
-      _ExtentX        =   17436
-      _ExtentY        =   556
-      Caption         =   $"Main.frx":0442
-   End
    Begin MSComctlLib.Toolbar Toolbar1 
       Align           =   2  'Align Bottom
       Height          =   360
@@ -50,7 +37,7 @@ Begin VB.Form frmMain
       ImageList       =   "ilsMain"
       _Version        =   393216
       BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
-         NumButtons      =   15
+         NumButtons      =   14
          BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Exit"
             Description     =   "Exit"
@@ -111,12 +98,6 @@ Begin VB.Form frmMain
          BeginProperty Button14 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
          EndProperty
-         BeginProperty Button15 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Key             =   "Stop"
-            Description     =   "Stop"
-            Object.ToolTipText     =   "Abort edit or new"
-            ImageKey        =   "abort"
-         EndProperty
       EndProperty
    End
    Begin MSComctlLib.ImageList ilsMain 
@@ -133,70 +114,70 @@ Begin VB.Form frmMain
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   15
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":050C
+            Picture         =   "Main.frx":0442
             Key             =   "closed"
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0628
+            Picture         =   "Main.frx":055E
             Key             =   "open"
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0744
+            Picture         =   "Main.frx":067A
             Key             =   "code"
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0860
+            Picture         =   "Main.frx":0796
             Key             =   "codered"
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":097C
+            Picture         =   "Main.frx":08B2
             Key             =   "note"
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0A98
+            Picture         =   "Main.frx":09CE
             Key             =   "vb"
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0BB4
+            Picture         =   "Main.frx":0AEA
             Key             =   "delete"
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0CCC
+            Picture         =   "Main.frx":0C02
             Key             =   "copy"
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0DE4
+            Picture         =   "Main.frx":0D1A
             Key             =   "exit"
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0EFC
+            Picture         =   "Main.frx":0E32
             Key             =   "redo"
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1014
+            Picture         =   "Main.frx":0F4A
             Key             =   "repair"
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":112C
+            Picture         =   "Main.frx":1062
             Key             =   "help"
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1244
+            Picture         =   "Main.frx":117A
             Key             =   "edit"
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":135C
+            Picture         =   "Main.frx":1292
             Key             =   "save"
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1474
+            Picture         =   "Main.frx":13AA
             Key             =   "abort"
          EndProperty
       EndProperty
    End
    Begin MSComctlLib.TabStrip tabCode 
       Height          =   5775
-      Left            =   3480
+      Left            =   3360
       TabIndex        =   11
       Top             =   480
       Width           =   6195
@@ -236,12 +217,12 @@ Begin VB.Form frmMain
       BorderStyle     =   0  'None
       Height          =   5295
       Index           =   0
-      Left            =   3240
+      Left            =   3480
       Locked          =   -1  'True
       MultiLine       =   -1  'True
       TabIndex        =   5
       Top             =   840
-      Width           =   6255
+      Width           =   6015
    End
    Begin VB.TextBox txtCodeWindow 
       BeginProperty Font 
@@ -400,6 +381,7 @@ Option Explicit
  Dim rsCategories As Recordset
  Dim rsRoutines As Recordset
  Dim rsFiltered As Recordset
+ Dim lActivarForm As Boolean
  
  Dim CurrentNode As Node
 
@@ -760,6 +742,7 @@ End Sub
 Private Sub Form_Load()
 '*** Code added by HelpWriter ***
    SetAppHelp Me.hWnd
+    lActivarForm = False ' para verificar por primera vez la ruta de base
 
 'Center on the screen
    Me.Left = (Screen.Width - Me.Width) / 2
@@ -791,7 +774,7 @@ End Sub
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
   If UnloadMode = 0 Then      'User chose close from control menu
    'If user clicks the No button, stop Exit
-     If MsgBox("Do you really want to exit Code Bank?", vbQuestion + vbYesNo + vbDefaultButton2, "Exiting Code Bank") = vbNo Then
+     If MsgBox("Quieres salir de Snippets?", vbQuestion + vbYesNo + vbDefaultButton2, "Salir de Snippets") = vbNo Then
         Cancel = True
         Exit Sub
      End If
@@ -818,26 +801,26 @@ Private Sub mnuEdit_Click()
 ' Before the menu is dropped down this routine checks that there is a
 ' routine selected, if yes, then enable the menu items
 
-  mnuEditRoutine.Enabled = False
-  mnuDeleteRoutine.Enabled = False
-  mnuCopy.Enabled = False
+  'mnuEditRoutine.Enabled = False
+  'mnuDeleteRoutine.Enabled = False
+  'mnuCopy.Enabled = False
   
 'If tree view has not been selected then an error will occur
   On Error GoTo DisplayOnly
   
   If Left(CurrentNode.Key, 7) = "Routine" Then
-      mnuEditRoutine.Enabled = True
-      mnuDeleteRoutine.Enabled = True
-      mnuCopy.Enabled = True
+      'mnuEditRoutine.Enabled = True
+      'mnuDeleteRoutine.Enabled = True
+      'mnuCopy.Enabled = True
   End If
 
 DisplayOnly:
 ' Before the menu is dropped down this routine checks if in
 ' Edit or Display mode, if Editing then disable the menu items
   If fvDisplayOnly = False Then
-     mnuEditRoutine.Enabled = False
-     mnuDeleteRoutine.Enabled = False
-     mnuCopy.Enabled = False
+     'mnuEditRoutine.Enabled = False
+     'mnuDeleteRoutine.Enabled = False
+     'mnuCopy.Enabled = False
   End If
 
 End Sub
@@ -856,10 +839,9 @@ End Sub
 
 Private Sub mnuFileExit_Click()
  'If user clicks the No button, stop Exit
-  If MsgBox("Do you really want to exit Code Bank?", vbQuestion + vbYesNo + vbDefaultButton2, "Exiting Code Bank") = vbNo Then Exit Sub
-  
+ If MsgBox("Quieres salir de Snippets?", vbQuestion + vbYesNo + vbDefaultButton2, "Salir de Snippets") = vbNo Then
   Call ExitProgram
-
+ End If
 End Sub
 
 Private Sub mnuHelpContents_Click()
@@ -871,13 +853,13 @@ Private Sub mnuInsert_Click()
 ' Before the menu is dropped down this routine checks if in
 ' Edit mode
 
-  If fvDisplayOnly = False Then
-      mnuNewRoutine.Enabled = False
-      mnuNewCategory.Enabled = False
-  Else
-      mnuNewRoutine.Enabled = True
-      mnuNewCategory.Enabled = True
-  End If
+  'If fvDisplayOnly = False Then
+    '  mnuNewRoutine.Enabled = False
+   '   mnuNewCategory.Enabled = False
+  'Else
+   '   mnuNewRoutine.Enabled = True
+    '  mnuNewCategory.Enabled = True
+  'End If
 
 End Sub
 
@@ -945,9 +927,9 @@ Private Sub Toolbar1_ButtonClick(ByVal Button As Button)
   Select Case Button.Key
     Case Is = "Exit"
      'If user clicks the No button, stop Exit
-       If MsgBox("Do you really want to exit Code Bank?", vbQuestion + vbYesNo + vbDefaultButton2, "Exiting Code Bank") = vbNo Then Exit Sub
-       Call ExitProgram
-    Case Is = "Repair"
+       If MsgBox("Quieres salir de Snippets?", vbQuestion + vbYesNo + vbDefaultButton2, "Salir de Snippets") = vbYes Then
+        Call ExitProgram
+      End If
        
     Case Is = "Delete"
        Call DeleteRoutine
@@ -1022,7 +1004,7 @@ CodeError:
 
 End Sub
 
-Private Sub tvwMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub tvwMain_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
 'Exit if nothing selected in tree view
   If tvwMain.SelectedItem Is Nothing Then Exit Sub
                                  
@@ -1063,7 +1045,41 @@ CodeError:
 End Sub
 
 Public Sub OpenTables()
-  Set dbName = OpenDatabase(App.Path + "\codebank.mdb")
+
+
+Dim i As Integer
+
+
+  ' Set dbName = OpenDatabase(App.Path + "\codebank.mdb")
+  
+  
+     If Not lActivarForm Then
+        lActivarForm = True
+        sRutaIni = App.Path & "\" & "Snippets.ini"
+        ' validar ruta de base
+        sRutaBase = LeerIni("PARAMETROS", "RUTABASE")
+        If sRutaBase = "" Then ' si no existe
+            FrmEspera.Show 1
+        End If
+        
+ 'obtener ruta de base
+
+
+For i = Len(sRutaBase) To 1 Step -1
+   If Mid(sRutaBase, i, 1) = "\" Then
+        sruta = Left(sRutaBase, i)
+        Exit For
+   End If
+Next
+  
+End If
+  
+  'Set dbName = OpenDatabase(sRutaBase + "\codebank.mdb")
+  
+  Set gwsWorkspace = DBEngine.CreateWorkspace("NewJetWorkspace", "Admin", "", dbUseJet)
+  Set dbName = gwsWorkspace.OpenDatabase(sRutaBase, False, False)
+  
+  
   Set rsCategories = dbName.OpenRecordset("SELECT * FROM Category " & "ORDER BY Category") ', dbOpenSnapshot)
   Set rsRoutines = dbName.OpenRecordset("SELECT * FROM Routine " & "ORDER BY Category, Routine") ', dbOpenSnapshot)
 
