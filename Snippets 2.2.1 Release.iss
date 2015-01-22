@@ -73,7 +73,7 @@ PrivilegesRequired=Admin
 MinVersion=0,5.01
 OnlyBelowVersion=0,6.4
 Compression=lzma
-OutputBaseFilename=SnippetsRelease006
+OutputBaseFilename=SnippetsRelease005
 
 [Tasks]
 Name: Desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}
@@ -88,7 +88,7 @@ Source: C:\Program Files\Randem Systems\InnoScript 11\VB 6 Redist Files\ASYCFILT
 Source: C:\Program Files\Randem Systems\InnoScript 11\VB 6 Redist Files\COMCAT.DLL; DestDir: {sys}; Flags:  restartreplace sharedfile uninsneveruninstall; OnlyBelowVersion: 0,6.0;
 Source: C:\Program Files\Randem Systems\InnoScript 11\VB 6 Redist Files\VB5DB.DLL; DestDir: {sys}; Flags:  restartreplace sharedfile uninsneveruninstall; 
 Source: C:\Program Files\TC UP\PLUGINS\Tools\ColSel\COMDLG32.OCX; DestDir: {sys}; Flags:  restartreplace sharedfile; 
-Source: C:\Program Files\Common Files\microsoft shared\DAO\DAO350.DLL; DestDir: {sys}; Flags:  restartreplace sharedfile;  
+Source: C:\Program Files\Common Files\microsoft shared\DAO\DAO350.DLL; DestDir: {cf}\microsoft shared\DAO\; Flags:  ignoreversion; 
 Source: Z:\Shared code\Codigo Fuente06-08-04\Codigo Fuente\cobranza\instalador\mscomctl.ocx; DestDir: {sys}; Flags:  restartreplace sharedfile; 
 ;Source: Z:\Shared code\Codigo Fuente06-08-04\Codigo Fuente\cobranza\instalador\ArSBody.ocx; DestDir: {sys}; Flags:  restartreplace sharedfile; 
 ;Source: Z:\Shared code\Codigo Fuente06-08-04\Codigo Fuente\cobranza\instalador\runtime\ArsTabB.ocx; DestDir: {sys}; Flags:  restartreplace sharedfile; 
@@ -104,8 +104,8 @@ Source: C:\Snippets\Codebank.mdb; DestDir: {app}
 ; Download MDAC and JET files from the Download menu of InnoScript or http://www.randemsystems.com/osupdatersupport.html
 ; * * * Downloaded files MUST be placed in the \Scripts\Output\Support\ folder to be found * * *
 ;
-;Source: ..\Scripts\Output\Support\mdac_typ_281.exe; DestDir: {tmp}; Flags: ignoreversion nocompression deleteafterinstall; MinVersion: 4.0,4.0; OnlyBelowVersion: 0,6.0; Tasks: DatabaseSupport
-;Source: ..\Scripts\Output\Support\Jet40SP8_WXP.exe; DestDir: {tmp}; Flags: ignoreversion nocompression deleteafterinstall; MinVersion: 0,5.01; OnlyBelowVersion: 0,6.0; Tasks: DatabaseSupport
+Source: ..\Scripts\Output\Support\mdac_typ_281.exe; DestDir: {tmp}; Flags: ignoreversion nocompression deleteafterinstall; MinVersion: 4.0,4.0; OnlyBelowVersion: 0,6.0; Tasks: DatabaseSupport
+Source: ..\Scripts\Output\Support\Jet40SP8_WXP.exe; DestDir: {tmp}; Flags: ignoreversion nocompression deleteafterinstall; MinVersion: 0,5.01; OnlyBelowVersion: 0,6.0; Tasks: DatabaseSupport
 ;
 ; Download MDAC and JET files from the Download menu of InnoScript or http://www.randemsystems.com/osupdatersupport.html
 ; * * * Downloaded files MUST be placed in the \Scripts\Output\Support\ folder to be found * * *

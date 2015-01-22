@@ -5,7 +5,7 @@ delete from Category
 select * from Routine
 
 
-insert into Category values ('6','C#');
+insert into Category values ('7','HTML');
 
 UPDATE Routine
 SET Category ='VB6.0';

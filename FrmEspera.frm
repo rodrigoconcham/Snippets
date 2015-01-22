@@ -84,16 +84,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-Private Declare Function GetWindowLong Lib "User32" Alias "GetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long) As Long
-Private Declare Function SetWindowLong Lib "User32" Alias "SetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
-Private Declare Function SetWindowPos Lib "User32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal x As Long, ByVal Y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
-
-Const SWP_DRAWFRAME = &H20
-Const SWP_NOMOVE = &H2
-Const SWP_NOSIZE = &H1
-Const SWP_NOZORDER = &H4
-Const WS_THICKFRAME = &H40000
-Const GWL_STYLE = (-16)
 
 Private Sub Cmd_aceptar_Click()
 
