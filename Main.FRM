@@ -6,7 +6,7 @@ Begin VB.Form frmMain
    Caption         =   "snippets"
    ClientHeight    =   7185
    ClientLeft      =   1575
-   ClientTop       =   1830
+   ClientTop       =   2130
    ClientWidth     =   9915
    DrawMode        =   1  'Blackness
    FillStyle       =   2  'Horizontal Line
@@ -21,6 +21,21 @@ Begin VB.Form frmMain
    ScaleWidth      =   9915
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
+   Begin VB.PictureBox tryicon 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      ForeColor       =   &H80000008&
+      Height          =   270
+      Left            =   600
+      Picture         =   "Main.frx":0442
+      ScaleHeight     =   240
+      ScaleWidth      =   240
+      TabIndex        =   14
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   270
+   End
    Begin MSComctlLib.Toolbar Toolbar1 
       Align           =   2  'Align Bottom
       Height          =   360
@@ -114,63 +129,63 @@ Begin VB.Form frmMain
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   15
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0442
+            Picture         =   "Main.frx":0884
             Key             =   "closed"
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":055E
+            Picture         =   "Main.frx":09A0
             Key             =   "open"
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":067A
+            Picture         =   "Main.frx":0ABC
             Key             =   "code"
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0796
+            Picture         =   "Main.frx":0BD8
             Key             =   "codered"
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":08B2
+            Picture         =   "Main.frx":0CF4
             Key             =   "note"
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":09CE
+            Picture         =   "Main.frx":0E10
             Key             =   "vb"
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0AEA
+            Picture         =   "Main.frx":0F2C
             Key             =   "delete"
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0C02
+            Picture         =   "Main.frx":1044
             Key             =   "copy"
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0D1A
+            Picture         =   "Main.frx":115C
             Key             =   "exit"
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0E32
+            Picture         =   "Main.frx":1274
             Key             =   "redo"
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":0F4A
+            Picture         =   "Main.frx":138C
             Key             =   "repair"
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1062
+            Picture         =   "Main.frx":14A4
             Key             =   "help"
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":117A
+            Picture         =   "Main.frx":15BC
             Key             =   "edit"
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":1292
+            Picture         =   "Main.frx":16D4
             Key             =   "save"
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Main.frx":13AA
+            Picture         =   "Main.frx":17EC
             Key             =   "abort"
          EndProperty
       EndProperty
@@ -365,13 +380,35 @@ Begin VB.Form frmMain
       Y1              =   0
       Y2              =   0
    End
+   Begin VB.Menu mfile 
+      Caption         =   "File"
+      Begin VB.Menu mnurun 
+         Caption         =   "add icon"
+      End
+      Begin VB.Menu mnuStop 
+         Caption         =   "remove icon"
+      End
+   End
+   Begin VB.Menu mmasry 
+      Caption         =   "masry"
+      Visible         =   0   'False
+      Begin VB.Menu mhide 
+         Caption         =   "hide"
+      End
+      Begin VB.Menu mshow 
+         Caption         =   "show"
+      End
+      Begin VB.Menu mend 
+         Caption         =   "exit"
+      End
+   End
 End
 Attribute VB_Name = "frmMain"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Option Explicit
+'Option Explicit
 
 'Form level variables
  Dim fvDisplayOnly As Boolean
@@ -384,6 +421,28 @@ Option Explicit
  Dim lActivarForm As Boolean
  
  Dim CurrentNode As Node
+ 
+ Private Declare Function Shell_NotifyIcon Lib _
+"shell32.dll" Alias "Shell_NotifyIconA" _
+(ByVal dwMessage As Long, lpData As NOTIFYICONDATA) As Long
+
+Private Type NOTIFYICONDATA
+cbSize As Long
+hwnd As Long
+uID As Long
+uFlags As Long
+uCallbackMessage As Long
+hIcon As Long
+szToolTip As String * 64
+End Type
+
+Dim notify As NOTIFYICONDATA
+Const NIM_ADD = &H0
+Const NIM_DELETE = &H2
+Const NIF_TIP = &H4
+Const NIF_MESSAGE = &H1
+Const NIF_ICON = &H2
+Const WM_MOUSEMOVE = &H200
 
 Public Sub ExitProgram()
 'Close CodeBank Tables
@@ -741,7 +800,7 @@ End Sub
 
 Private Sub Form_Load()
 '*** Code added by HelpWriter ***
-   SetAppHelp Me.hWnd
+   SetAppHelp Me.hwnd
     lActivarForm = False ' para verificar por primera vez la ruta de base
 
 'Center on the screen
@@ -768,6 +827,12 @@ Private Sub Form_Load()
   Toolbar1.Buttons("Edit").Enabled = False
   Toolbar1.Buttons("Copy").Enabled = False
   Toolbar1.Buttons("New").Enabled = False
+  
+
+
+delicon
+Call seticon
+  
 
 End Sub
 
@@ -784,6 +849,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
      
   End If
 
+Call delicon
 
 End Sub
 
@@ -950,6 +1016,8 @@ Private Sub Toolbar1_ButtonClick(ByVal Button As Button)
   
 End Sub
 
+
+
 Private Sub tvwMain_BeforeLabelEdit(Cancel As Integer)
 'This prevents editing nodes in the tree view control
   Cancel = True
@@ -1004,7 +1072,7 @@ CodeError:
 
 End Sub
 
-Private Sub tvwMain_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub tvwMain_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
 'Exit if nothing selected in tree view
   If tvwMain.SelectedItem Is Nothing Then Exit Sub
                                  
@@ -1127,5 +1195,58 @@ Private Sub tvwMain_NodeClick(ByVal Node As Node)
   End If
   
 End Sub
+
+Private Sub mend_Click()
+Unload Me
+End Sub
+
+Private Sub mhide_Click()
+Me.Hide
+End Sub
+
+Private Sub mnurun_Click()
+seticon
+Me.mnurun.Checked = True
+Me.mnuStop.Checked = False
+
+End Sub
+Private Sub mnuStop_Click()
+Me.mnurun.Checked = False
+Me.mnuStop.Checked = True
+delicon
+End Sub
+
+Private Sub mshow_Click()
+Me.Show
+End Sub
+
+Private Sub tryicon_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+If Button = 2 Then
+Me.PopupMenu mmasry
+End If
+End Sub
+
+Public Sub seticon()
+Me.mnurun.Checked = False
+Me.mnuStop.Checked = False
+With notify
+.cbSize = Len(obj)
+.hwnd = tryicon.hwnd
+.uID = 1&
+.uFlags = NIF_TIP Or NIF_MESSAGE Or NIF_ICON
+.uCallbackMessage = WM_MOUSEMOVE
+.hIcon = tryicon.Picture
+.szToolTip = "reda al masry"
+End With
+Shell_NotifyIcon NIM_ADD, notify
+End Sub
+
+Public Sub delicon()
+Me.mnurun.Checked = False
+Me.mnuStop.Checked = True
+Shell_NotifyIcon NIM_DELETE, notify
+End Sub
+
+
 
 
