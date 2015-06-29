@@ -52,7 +52,7 @@ Begin VB.Form frmMain
       ImageList       =   "ilsMain"
       _Version        =   393216
       BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
-         NumButtons      =   14
+         NumButtons      =   16
          BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Key             =   "Exit"
             Description     =   "Exit"
@@ -112,6 +112,21 @@ Begin VB.Form frmMain
          EndProperty
          BeginProperty Button14 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Style           =   3
+         EndProperty
+         BeginProperty Button15 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Stop"
+            Description     =   "Stop"
+            ImageIndex      =   15
+            BeginProperty ButtonMenus {66833FEC-8583-11D1-B16A-00C0F0283628} 
+               NumButtonMenus  =   2
+               BeginProperty ButtonMenu1 {66833FEE-8583-11D1-B16A-00C0F0283628} 
+               EndProperty
+               BeginProperty ButtonMenu2 {66833FEE-8583-11D1-B16A-00C0F0283628} 
+               EndProperty
+            EndProperty
+         EndProperty
+         BeginProperty Button16 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Description     =   "Stop"
          EndProperty
       EndProperty
    End
@@ -786,6 +801,17 @@ Public Sub Save()
    'Add new routine to treeview
      Call AddNode(lblCategory(1), "Routine" & rsRoutines("counter"), rsRoutines("Routine"))
   End If
+  
+  
+   'Change Node text
+      tvwMain.Nodes(CurrentNode.Key).Text = txtRoute.Text
+   
+   'Return to View Model
+     Call Abort
+  
+  
+  
+  
   
 'Disable error trapping & exit
   On Error GoTo 0
